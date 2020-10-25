@@ -57,15 +57,11 @@ target_outputs = torch.tensor([[56, 70],
 # ![alt text](nn.png "Data")
 #
 # Define a Neural network with 2 layers (input and output). The number of
-# neurons should be a parameter of the class. Notice that we expect a positive
-# output from the network  (hint: *is the target output positive or negative*?),
-# therefore we should use an activation function that gives a positive output.
+# neurons should be a parameter of the class.
 # We will use ReLU for the first layer as activation function.
 #
 # Remember that
 # - ReLU activation : $\sigma(x) = \max(0,x)$
-# - Sigmoidal activation: $\sigma(x) = \frac{1}{1+e^{-x}}$
-#
 
 
 class NeuralNet(nn.Module):
