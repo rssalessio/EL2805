@@ -60,8 +60,7 @@ target_outputs = torch.tensor([[56, 70],
 # neurons should be a parameter of the class. Notice that we expect a positive
 # output from the network  (hint: *is the target output positive or negative*?),
 # therefore we should use an activation function that gives a positive output.
-# We will use ReLU for the output neurons, and sigmoidal activations for the
-# input layer to practice.
+# We will use ReLU for the first layer as activation function.
 #
 # Remember that
 # - ReLU activation : $\sigma(x) = \max(0,x)$
@@ -78,7 +77,6 @@ class NeuralNet(nn.Module):
         self.linear1 = nn.Linear(3, neurons) # Layer with 3 inputs and `neurons` output
         self.act1 = nn.ReLU() # Activation function
         self.linear2 = nn.Linear(neurons, 2) # Layer with `neurons` inputs and 2 outputs
-        self.act2 = nn.ReLU() # Activation function
 
     # In the forward function you define how each layer is
     # interconnected. Observe that 'x' is the input.
