@@ -104,12 +104,12 @@ for episode in range(5):
             states, actions, rewards, next_states, dones = buffer.sample_batch(3)
             states_values = network(
                 torch.tensor(states, requires_grad=True, dtype=torch.float32))
-            target_values = torch.zeros_like(states, requires_grade=False,
+            target_values = torch.zeros_like(states_values, requires_grad=False,
                             dtype=torch.float32)
 
             loss = nn.functional.mse_loss(states_values, target_values)
             loss.backward()
-            nn.utils.clip_grad_norm_(neural network.parameters(), 1.)
+            nn.utils.clip_grad_norm_(network.parameters(), 1.)
             optimizer.step()
 
 # Close all the windows
